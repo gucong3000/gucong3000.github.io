@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件-background</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>css("background", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式background的值。</p>
+<h3>可用值</h3>
+<p>该属性是复合属性，使用空格分隔各值即可。请参阅各参数对应的属性。</p>
+<h3>示例</h3>
+<code>$(document.body).css("background","url('chess.png') gray 50% repeat fixed");</code>
+<hr>
+<h2>css("background-image")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式background-image。</p>
+<h3>示例</h3>
+<code>alert($(document.body).css("background-image"));</code>
+<hr>
+<h2>css("background-image", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式background-image的值。</p>
+<h3>可用值</h3>
+<p>none:默认值。无背景图</p>
+<p>url( url ):使用绝对或相对 url 地址指定背景图像</p>
+<p>linear-gradient(&lt;start-point&gt;, &lt;color-start&gt;, &lt;color-stop&gt;):线性渐变颜色。start-point指渐变开始的方向，可取top、left、right、bottom,&lt;color-start&gt;, &lt;color-stop&gt;为开始和结束的颜色。 </p>
+<p>jQuery.CSS3插件会统一不同浏览器下的线性渐变语法，使用统一的语法即可。</p>
+<h3>示例</h3>
+<code>$(document.body).css("background","linear-gradient(top, rgba(255, 255, 0, 0.5), rgba(127, 127, 0, 0.5))");</code>
+<hr>
+<h2>css("background-color")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式background-color。</p>
+<h3>示例</h3>
+<code>alert($(document.body).css("background-color"));</code>
+<hr>
+<h2>css("background-color", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式background-color的值。</p>
+<h3>可用值</h3>
+<p>&lt;name&gt;：使用颜色名。</p>
+<p>#RGB：三位十六进制正整数。取值范围为：0 - F。</p>
+<p>#RRGGBB：三个两位十六进制正整数。取值范围为：00 - FF。</p>
+<p>rgb(r, g, b)：r,g,b表示红，绿，蓝的正整数或百分数数值。</p>
+<p>rgba(r, g, b, a)：r,g,b表示红，绿，蓝的正整数或百分数数值，a表示不同明度的百分数数值或0-1的小数。</p>
+<p>IE通过就Query.CSS3插件实现rgba(r, g, b, a)。</p>
+<h3>示例</h3>
+<code>$(document.body).css("background-color","red");
+$(document.body).css("background-color","#0FF");
+$(document.body).css("background-color","#0000FF");
+$(document.body).css("background-color","rgb(0, 255, 255)");
+$(document.body).css("background-color","rgba(0, 255, 255, 0.6)");
+</code>
+<div id="demo1">这里是一个示例<br>
+请拖动滚动条→<br>
+background:rgba(255,255,0,.5)</div>
+<div id="demo2">这里是一个示例<br>
+请拖动滚动条→<br>
+background:linear-gradient<br>
+(top,rgba(255,0,0,0.5),<br>
+rgba(0,255,0,0.5))</div>
+<script type="text/javascript">
+$("#demo1").css({
+	"background": "rgba(255,255,0,.5)",
+	"position": "fixed",
+	"right": 18,
+	"top": 5
+});
+$("#demo2").css({
+	"background": "linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 0, 0, 0.3))",
+	"position": "fixed",
+	"right": 18,
+	"top": 60
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,881 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.w3school.com.cn/html5/html_5_canvas.asp by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 17 Nov 2011 05:24:35 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta name="robots" content="all" />
+
+<meta name="author" content="w3school.com.cn" />
+<meta name="Copyright" content="Copyright W3school.com.cn All Rights Reserved." />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta http-equiv="imagetoolbar" content="false" />
+
+<link rel="stylesheet" type="text/css" href="c3.css" />
+
+<title>HTML 5 Canvas</title>
+</head>
+
+<body class="html">
+<div id="wrapper"><div id="navsecond">
+
+<div id="course">
+<h2>HTML 5 教程</h2>
+<ul>
+<li><a href="index.html" title="HTML 5 教程">HTML 5 首页</a></li>
+<li><a href="html_5_intro.html" title="HTML 5 简介">HTML 5 简介</a></li>
+<li><a href="html_5_video.html" title="HTML 5 视频">HTML 5 视频</a></li>
+<li><a href="html_5_audio.html" title="HTML 5 音频">HTML 5 音频</a></li>
+<li><a href="html_5_canvas.html" title="HTML 5 Canvas">HTML 5 画布</a></li>
+<li><a href="html_5_webstorage.html" title="HTML 5 Web 存储">HTML 5 Web 存储</a></li>
+</ul>
+
+<h2>HTML 5 表单</h2>
+<ul>
+<li><a href="html_5_form_input_types.html" title="HTML 5 输入类型">HTML 5 输入类型</a></li>
+<li><a href="html_5_form_elements.html" title="HTML 5 表单元素">HTML 5 表单元素</a></li>
+<li><a href="html_5_form_attributes.html" title="HTML 5 表单属性">HTML 5 表单属性</a></li>
+</ul>
+
+<h2>HTML 5 参考手册</h2>
+<ul>
+<li><a href="html5_reference.html" title="HTML 5 参考手册">HTML 5 标签</a></li>
+<li><a href="html5_ref_globalattributes.html" title="HTML 5 标准属性">HTML 5 属性</a></li>
+<li><a href="html5_ref_eventattributes.html" title="HTML 5 事件属性">HTML 5 事件</a></li>
+</ul>
+
+<h2>HTML 标签</h2>
+
+
+
+<ul class="small">
+
+
+<li>
+<a href="tag_comment.html">
+&lt;!--&gt;</a></li>
+
+
+<li>
+<a href="tag_doctype.html">
+&lt;!DOCTYPE&gt;</a></li>
+
+
+<li>
+<a href="tag_a.html">
+&lt;a&gt;</a></li>
+
+
+<li>
+<a href="tag_abbr.html">
+&lt;abbr&gt;</a></li>
+
+
+<li>
+<a href="tag_acronym.html">
+&lt;acronym&gt;</a></li>
+
+
+<li>
+<a href="tag_address.html">
+&lt;address&gt;</a></li>
+
+
+<li>
+<a href="tag_applet.html">
+&lt;applet&gt;</a></li>
+
+
+<li>
+<a href="tag_area.html">
+&lt;area&gt;</a></li>
+
+
+<li>
+<a href="tag_article.html">
+&lt;article&gt;</a></li>
+
+
+<li>
+<a href="tag_aside.html">
+&lt;aside&gt;</a></li>
+
+
+<li>
+<a href="tag_audio.html">
+&lt;audio&gt;</a></li>
+
+
+<li>
+<a href="tag_b.html">
+&lt;b&gt;</a></li>
+
+
+<li>
+<a href="tag_base.html">
+&lt;base&gt;</a></li>
+
+
+<li>
+<a href="tag_basefont.html">
+&lt;basefont&gt;</a></li>
+
+
+<li>
+<a href="tag_bdi.html">
+&lt;bdi&gt;</a></li>
+
+
+<li>
+<a href="tag_bdo.html">
+&lt;bdo&gt;</a></li>
+
+
+<li>
+<a href="tag_big.html">
+&lt;big&gt;</a></li>
+
+
+<li>
+<a href="tag_blockquote.html">
+&lt;blockquote&gt;</a></li>
+
+
+<li>
+<a href="tag_body.html">
+&lt;body&gt;</a></li>
+
+
+<li>
+<a href="tag_br.html">
+&lt;br&gt;</a></li>
+
+
+<li>
+<a href="tag_button.html">
+&lt;button&gt;</a></li>
+
+
+<li>
+<a href="tag_canvas.html">
+&lt;canvas&gt;</a></li>
+
+
+<li>
+<a href="tag_caption.html">
+&lt;caption&gt;</a></li>
+
+
+<li>
+<a href="tag_center.html">
+&lt;center&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;cite&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;code&gt;</a></li>
+
+
+<li>
+<a href="tag_col.html">
+&lt;col&gt;</a></li>
+
+
+<li>
+<a href="tag_colgroup.html">
+&lt;colgroup&gt;</a></li>
+
+
+<li>
+<a href="tag_command.html">
+&lt;command&gt;</a></li>
+
+
+<li>
+<a href="tag_datalist.html">
+&lt;datalist&gt;</a></li>
+
+
+<li>
+<a href="tag_dd.html">
+&lt;dd&gt;</a></li>
+
+
+<li>
+<a href="tag_del.html">
+&lt;del&gt;</a></li>
+
+
+<li>
+<a href="tag_details.html">
+&lt;details&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;dfn&gt;</a></li>
+
+
+<li>
+<a href="tag_dir.html">
+&lt;dir&gt;</a></li>
+
+
+<li>
+<a href="tag_div.html">
+&lt;div&gt;</a></li>
+
+
+<li>
+<a href="tag_dl.html">
+&lt;dl&gt;</a></li>
+
+
+<li>
+<a href="tag_dt.html">
+&lt;dt&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;em&gt;</a></li>
+
+
+<li>
+<a href="tag_embed.html">
+&lt;embed&gt;</a></li>
+
+
+<li>
+<a href="tag_fieldset.html">
+&lt;fieldset&gt;</a></li>
+
+
+<li>
+<a href="tag_figcaption.html">
+&lt;figcaption&gt;</a></li>
+
+
+<li>
+<a href="tag_figure.html">
+&lt;figure&gt;</a></li>
+
+
+<li>
+<a href="tag_font.html">
+&lt;font&gt;</a></li>
+
+
+<li>
+<a href="tag_footer.html">
+&lt;footer&gt;</a></li>
+
+
+<li>
+<a href="tag_form.html">
+&lt;form&gt;</a></li>
+
+
+<li>
+<a href="tag_frame.html">
+&lt;frame&gt;</a></li>
+
+
+<li>
+<a href="tag_frameset.html">
+&lt;frameset&gt;</a></li>
+
+
+<li>
+<a href="tag_hn.html">
+&lt;h1&gt; - &lt;h6&gt;</a></li>
+
+
+<li>
+<a href="tag_head.html">
+&lt;head&gt;</a></li>
+
+
+<li>
+<a href="tag_header.html">
+&lt;header&gt;</a></li>
+
+
+<li>
+<a href="tag_hgroup.html">
+&lt;hgroup&gt;</a></li>
+
+
+<li>
+<a href="tag_hr.html">
+&lt;hr&gt;</a></li>
+
+
+<li>
+<a href="tag_html.html">
+&lt;html&gt;</a></li>
+
+
+<li>
+<a href="tag_i.html">
+&lt;i&gt;</a></li>
+
+
+<li>
+<a href="tag_iframe.html">
+&lt;iframe&gt;</a></li>
+
+
+<li>
+<a href="tag_img.html">
+&lt;img&gt;</a></li>
+
+
+<li>
+<a href="tag_input.html">
+&lt;input&gt;</a></li>
+
+
+<li>
+<a href="tag_ins.html">
+&lt;ins&gt;</a></li>
+
+
+<li>
+<a href="tag_keygen.html">
+&lt;keygen&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;kbd&gt;</a></li>
+
+
+<li>
+<a href="tag_label.html">
+&lt;label&gt;</a></li>
+
+
+<li>
+<a href="tag_legend.html">
+&lt;legend&gt;</a></li>
+
+
+<li>
+<a href="tag_li.html">
+&lt;li&gt;</a></li>
+
+
+<li>
+<a href="tag_link.html">
+&lt;link&gt;</a></li>
+
+
+<li>
+<a href="tag_map.html">
+&lt;map&gt;</a></li>
+
+
+<li>
+<a href="tag_mark.html">
+&lt;mark&gt;</a></li>
+
+
+<li>
+<a href="tag_menu.html">
+&lt;menu&gt;</a></li>
+
+
+<li>
+<a href="tag_meta.html">
+&lt;meta&gt;</a></li>
+
+
+<li>
+<a href="tag_meter.html">
+&lt;meter&gt;</a></li>
+
+
+<li>
+<a href="tag_nav.html">
+&lt;nav&gt;</a></li>
+
+
+<li>
+<a href="tag_noframes.html">
+&lt;noframes&gt;</a></li>
+
+
+<li>
+<a href="tag_noscript.html">
+&lt;noscript&gt;</a></li>
+
+
+<li>
+<a href="tag_object.html">
+&lt;object&gt;</a></li>
+
+
+<li>
+<a href="tag_ol.html">
+&lt;ol&gt;</a></li>
+
+
+<li>
+<a href="tag_optgroup.html">
+&lt;optgroup&gt;</a></li>
+
+
+<li>
+<a href="tag_option.html">
+&lt;option&gt;</a></li>
+
+
+<li>
+<a href="tag_output.html">
+&lt;output&gt;</a></li>
+
+
+<li>
+<a href="tag_p.html">
+&lt;p&gt;</a></li>
+
+
+<li>
+<a href="tag_param.html">
+&lt;param&gt;</a></li>
+
+
+<li>
+<a href="tag_pre.html">
+&lt;pre&gt;</a></li>
+
+
+<li>
+<a href="tag_progress.html">
+&lt;progress&gt;</a></li>
+
+
+<li>
+<a href="tag_q.html">
+&lt;q&gt;</a></li>
+
+
+<li>
+<a href="tag_rp.html">
+&lt;rp&gt;</a></li>
+
+
+<li>
+<a href="tag_rt.html">
+&lt;rt&gt;</a></li>
+
+
+<li>
+<a href="tag_ruby.html">
+&lt;ruby&gt;</a></li>
+
+
+<li>
+<a href="tag_s.html">
+&lt;s&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;samp&gt;</a></li>
+
+
+<li>
+<a href="tag_script.html">
+&lt;script&gt;</a></li>
+
+
+<li>
+<a href="tag_section.html">
+&lt;section&gt;</a></li>
+
+
+<li>
+<a href="tag_select.html">
+&lt;select&gt;</a></li>
+
+
+<li>
+<a href="tag_small.html">
+&lt;small&gt;</a></li>
+
+
+<li>
+<a href="tag_source.html">
+&lt;source&gt;</a></li>
+
+
+<li>
+<a href="tag_span.html">
+&lt;span&gt;</a></li>
+
+
+<li>
+<a href="tag_strike.html">
+&lt;strike&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;strong&gt;</a></li>
+
+
+<li>
+<a href="tag_style.html">
+&lt;style&gt;</a></li>
+
+
+<li>
+<a href="tag_sup_sub.html">
+&lt;sub&gt;</a></li>
+
+
+<li>
+<a href="tag_summary.html">
+&lt;summary&gt;</a></li>
+
+
+<li>
+<a href="tag_sup_sub.html">
+&lt;sup&gt;</a></li>
+
+
+<li>
+<a href="tag_table.html">
+&lt;table&gt;</a></li>
+
+
+<li>
+<a href="tag_tbody.html">
+&lt;tbody&gt;</a></li>
+
+
+<li>
+<a href="tag_td.html">
+&lt;td&gt;</a></li>
+
+
+<li>
+<a href="tag_textarea.html">
+&lt;textarea&gt;</a></li>
+
+
+<li>
+<a href="tag_tfoot.html">
+&lt;tfoot&gt;</a></li>
+
+
+<li>
+<a href="tag_th.html">
+&lt;th&gt;</a></li>
+
+
+<li>
+<a href="tag_thead.html">
+&lt;thead&gt;</a></li>
+
+
+<li>
+<a href="tag_time.html">
+&lt;time&gt;</a></li>
+
+
+<li>
+<a href="tag_title.html">
+&lt;title&gt;</a></li>
+
+
+<li>
+<a href="tag_tr.html">
+&lt;tr&gt;</a></li>
+
+
+<li>
+<a href="tag_track.html">
+&lt;track&gt;</a></li>
+
+
+<li>
+<a href="tag_tt.html">
+&lt;tt&gt;</a></li>
+
+
+<li>
+<a href="tag_u.html">
+&lt;u&gt;</a></li>
+
+
+<li>
+<a href="tag_ul.html">
+&lt;ul&gt;</a></li>
+
+
+<li>
+<a href="tag_phrase_elements.html">
+&lt;var&gt;</a></li>
+
+
+<li>
+<a href="tag_video.html">
+&lt;video&gt;</a></li>
+
+</ul>
+</div>
+
+</div>
+
+<div id="maincontent">
+
+<h1>HTML 5 Canvas</h1>
+
+<div id="tpn">
+<ul class="prenext">
+
+<li class="pre"><a href="html_5_audio.html">Previous Page</a></li>
+
+<li class="next"><a href="html_5_webstorage.html">Next Page</a></li>
+</ul>
+
+</div>
+
+
+<div id="intro">
+<p><strong>canvas 元素用于在网页上绘制图形。</strong></p>
+</div>
+
+
+<div>
+<h2>什么是 Canvas？</h2>
+
+<p>HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。</p>
+
+<p>画布是一个矩形区域，您可以控制其每一像素。</p>
+
+<p>canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+</div>
+
+
+<div>
+<h2>创建 Canvas 元素</h2>
+
+<p>向 HTML5 页面添加 canvas 元素。</p>
+
+<p>规定元素的 id、宽度和高度：</p>
+
+<pre>&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;</pre>
+
+</div>
+
+
+<div>
+<h2>通过 JavaScript 来绘制</h2>
+
+<p>canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成：</p>
+
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+var c=document.getElementById(&quot;myCanvas&quot;);
+var cxt=c.getContext(&quot;2d&quot;);
+cxt.fillStyle=&quot;#FF0000&quot;;
+cxt.fillRect(0,0,150,75);
+&lt;/script&gt;
+</pre>
+
+<p>JavaScript 使用 id 来寻找 canvas 元素：</p>
+
+<pre>var c=document.getElementById(&quot;myCanvas&quot;);</pre>
+
+<p>然后，创建 context 对象：</p>
+
+<pre>var cxt=c.getContext(&quot;2d&quot;); </pre>
+
+<p>getContext(&quot;2d&quot;) 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+
+<p>下面的两行代码绘制一个红色的矩形：</p>
+
+<pre>
+cxt.fillStyle=&quot;#FF0000&quot;;
+cxt.fillRect(0,0,150,75); 
+</pre>
+
+<p>fillStyle 方法将其染成红色，fillRect 方法规定了形状、位置和尺寸。</p>
+</div>
+
+
+<div>
+<h2>理解坐标</h2>
+
+<p>上面的 fillRect 方法拥有参数 (0,0,150,75)。</p>
+
+<p>意思是：在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。</p>
+
+<p>如下图所示，画布的 X 和 Y 坐标用于在画布上对绘画进行定位。</p>
+
+<img src="i/ct_html5_canvas_coordinates.gif" />
+
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_canvas_coordinates">实例：把鼠标悬停在矩形上可以看到坐标</a></p>
+</div>
+
+
+<div>
+<h2>更多 Canvas 实例</h2>
+
+<p>下面的在 canvas 元素上进行绘画的更多实例：</p>
+
+
+<h3>实例 - 线条</h3>
+
+<p>通过指定从何处开始，在何处结束，来绘制一条线：</p>
+<img src="i/ct_html5_canvas_line.gif" />
+
+<p>JavaScript 代码：</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+var c=document.getElementById(&quot;myCanvas&quot;);
+var cxt=c.getContext(&quot;2d&quot;);
+cxt.moveTo(10,10);
+cxt.lineTo(150,50);
+cxt.lineTo(10,50);
+cxt.stroke();
+
+&lt;/script&gt;
+</pre>
+
+<p>canvas 元素：</p>
+<pre>
+&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #c3c3c3;&quot;&gt;
+Your browser does not support the canvas element.
+&lt;/canvas&gt;
+</pre>
+
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_canvas_line">亲自试一试</a></p>
+
+
+<h3>实例 - 圆形</h3>
+<p>通过规定尺寸、颜色和位置，来绘制一个圆：</p>
+<img src="i/ct_html5_canvas_circle.gif" />
+
+<p>JavaScript 代码：</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+var c=document.getElementById(&quot;myCanvas&quot;);
+var cxt=c.getContext(&quot;2d&quot;);
+cxt.fillStyle=&quot;#FF0000&quot;;
+cxt.beginPath();
+cxt.arc(70,18,15,0,Math.PI*2,true);
+cxt.closePath();
+cxt.fill();
+
+&lt;/script&gt;
+</pre>
+
+<p>canvas 元素：</p>
+<pre>
+&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #c3c3c3;&quot;&gt;
+Your browser does not support the canvas element.
+&lt;/canvas&gt;
+</pre>
+
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_canvas_circle">亲自试一试</a></p>
+
+
+<h3>实例 - 渐变</h3>
+<p>使用您指定的颜色来绘制渐变背景：</p>
+<img src="i/ct_html5_canvas_gradient.gif" />
+
+<p>JavaScript 代码：</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+var c=document.getElementById(&quot;myCanvas&quot;);
+var cxt=c.getContext(&quot;2d&quot;);
+var grd=cxt.createLinearGradient(0,0,175,50);
+grd.addColorStop(0,&quot;#FF0000&quot;);
+grd.addColorStop(1,&quot;#00FF00&quot;);
+cxt.fillStyle=grd;
+cxt.fillRect(0,0,175,50);
+
+&lt;/script&gt;
+</pre>
+
+<p>canvas 元素：</p>
+<pre>
+&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #c3c3c3;&quot;&gt;
+Your browser does not support the canvas element.
+&lt;/canvas&gt;
+</pre>
+
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_canvas_gradient">亲自试一试</a></p>
+
+
+<h3>实例 - 图像</h3>
+<p>把一幅图像放置到画布上：</p>
+<img src="i/ct_html5_canvas_image.gif" />
+
+<p>JavaScript 代码：</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+var c=document.getElementById(&quot;myCanvas&quot;);
+var cxt=c.getContext(&quot;2d&quot;);
+var img=new Image()
+img.src=&quot;flower.png&quot;
+cxt.drawImage(img,0,0);
+
+&lt;/script&gt;
+</pre>
+
+<p>canvas 元素：</p>
+<pre>
+&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #c3c3c3;&quot;&gt;
+Your browser does not support the canvas element.
+&lt;/canvas&gt;
+</pre>
+
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=html5_canvas_image">亲自试一试</a></p>
+
+</div>
+
+
+<div>
+<h2>相关页面</h2>
+
+<p>参考手册：<a href="tag_canvas.html" title="HTML 5 &lt;canvas&gt; 标签">HTML 5 &lt;canvas&gt; 标签</a></p>
+
+<p>参考手册：<a href="http://www.w3school.com.cn/htmldom/dom_obj_canvas.asp" title="HTML DOM Canvas 对象">HTML DOM Canvas 对象</a></p>
+
+</div>
+
+
+
+<div id="bpn">
+<ul class="prenext">
+
+<li class="pre"><a href="html_5_audio.html">Previous Page</a></li>
+
+<li class="next"><a href="html_5_webstorage.html">Next Page</a></li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</body>
+
+<!-- Mirrored from www.w3school.com.cn/html5/html_5_canvas.asp by HTTrack Website Copier/3.x [XR&CO'2008], Thu, 17 Nov 2011 05:24:35 GMT -->
+</html>

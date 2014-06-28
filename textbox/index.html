@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>ui</title>
+
+<link href="../style/base.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<form novalidate>
+		<h1>textbox.htc使用介绍</h1>
+		</p>
+			使用规范：<br>
+			1.文本框内提示文字，在placeholder属性中放入文字即可<br>
+			2.autofocus属性可以使文本框在页面加载后自动获得焦点。<br>
+			3.IE6下以.input_text、.input_submit代替input[type=&quot;text&quot;]、input[type=&quot;submit&quot;]来写CSS<br>
+			4.IE6\IE7下以.input_text_focus、.textarea_focus代替textarea:focus、 input:focus来写CSS<br>
+			<p>
+			<label for="username">用户名：</label>
+			<input name="username" type="text" id="username" placeholder="email地址就是用户名" required>
+			
+		</p>
+		<p>
+			<label for="pwd">密　码：</label>
+			<input name="pwd" type="password" id="pwd" placeholder="密码不得少于八位">
+		</p>
+		<p>
+			<input type="date" placeholder="日期">
+			input type=&quot;date&quot;
+		</p>
+		<p>
+			<input type="url" placeholder="个人主页" autofocus>
+			input type=&quot;url&quot; autofocus
+		</p>
+		<p>
+			<input type="number" placeholder="年龄">
+			input type=&quot;number&quot;
+		</p>
+		<p>
+			<input type="email" placeholder="电子邮箱">
+			input type=&quot;email&quot;
+		</p>
+		<p>
+			<input type="password" placeholder="密码">
+			input type=&quot;password&quot;
+		</p>
+		<p>
+			<input type="text" placeholder="姓名">
+			input type=&quot;text&quot;
+		</p>
+		<p>
+			<textarea placeholder="个人简介"></textarea>
+			textarea
+		</p>
+		<p>
+			<input type="submit" value="提交表单">
+		</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>css(&quot;transform&quot;)</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式transform。</p>
+<p>IE9 以下或IE怪癖模式下不可用。</p>
+<h3>示例</h3>
+<code>alert($("#qqmsg").css("transform"));</code>
+<hr>
+<h2>css(&quot;transform&quot;, value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式transform的值。</p>
+<p>IE9 以下或IE怪癖模式下通过jQuery.css3插件实现。</p>
+<h3>可用值</h3>
+<p>matrix(a,b,c,d,e,f) 函数以六个值（a 到 f）的矩阵的形式指定 2D 转换。</p>
+<p>translate(tx,[ty]) 函数指定按矢量 [tx,ty] 进行 2D 平移，其中 tx 是第一个平移值参数，ty 是可选的第二平移值参数。如果不指定 ty，则其值为零。（平移值参数可以是百分比或长度。）</p>
+<p>translateX(tx) 函数指定按 x 方向上的给定量进行平移。</p>
+<p>translateY(ty) 函数指定按 y 方向上的给定量进行平移。</p>
+<p>scale(sx,[sy]) 函数指定按照由两个参数描述的 [sx,sy] 缩放矢量进行 2D 缩放运算。如果没有提供第二参数，则它会采用等于第一参数的值。</p>
+<p>scaleX(sx) 函数指定通过使用 [sx,1] 缩放矢量进行缩放运算，其中 sx 作为参数给出。</p>
+<p>scaleY(sy) 函数指定通过使用 [1,sy] 缩放矢量进行缩放运算，其中 sy 作为参数给出。</p>
+<p>rotate(angle) 函数指定按有关元素起点的参数中指定的角度进行 2D 旋转，如 transform-origin 属性所定义。</p>
+<p>skewX(ax) 函数指定按给定角度沿 x 轴进行扭曲转换。</p>
+<p>skewY(ay) 函数指定按给定角度沿 y 轴进行扭曲转换。</p>
+<p>skew(ax,[ay]) 函数指定沿 x 轴和 y 轴进行扭曲转换。第一个角度参数指定 x 轴上的转换。第二个角度参数指定 y 轴上的转换。如果没有给出第二参数，则使用零作为角度 y 的值（即，在 y 轴上没有扭曲）。<br>
+</p>
+<p>该属性是复合属性，以上值可以一次使用多个，使用空格分隔各值即可。</p>
+<h3>示例</h3>
+<code>$("#qqmsg").css("transform","rotate(45deg)");</code>
+<hr>
+<h2>css(&quot;transform-origin&quot;, value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式transform-origin的值。</p>
+<p>IE9 以下目前暂不支持</p>
+<h3>可用值</h3>
+<p>接受一个或两个值。每个值都可以是关键字、长度或百分比。如果不设置 transform-origin 属性，则转换在中心开始（相当于 50% 50% 的 transform-origin 值）。</p>
+<p>第一个值表明水平位置（x 轴上的位置），可以是负值。此值可以是长度值（采用任意受支持的长度单位）、百分比（相对于框的总长），或以下三个关键字之一：left（相当于 0% 或长度为零）、center（相当于 50% 或框长的一半），或 right（相当于 100% 或框的全长）。</p>
+<p> 第二个值表明垂直位置（y 轴上的位置），可以是负值。此值可以是长度值（采用任意受支持的长度单位）、百分比（相对于框的总高），或以下三个关键字之一：top（相当于 0% 或高度为零）、center（相当于 50% 或框高的一半），或 bottom（相当于 100% 或框的总高）。</p>
+<p> 如果只指定一个值，则假定第二个值为 center。</p>
+<p></p>
+<h3>示例</h3>
+<code>$("#qqmsg").css("transform","rotate(-30deg) skew(-30deg, 0deg)");</code>
+<div id="demo">这里是一个示例<br>
+请拖动滚动条→<br>
+transform:rotate(-30deg) skew(-30deg, 0deg)
+</div>
+<script type="text/javascript">
+$("#demo").css({
+	"transform": "rotate(-30deg) skew(-30deg, 0deg)",
+	"transform-origin": "right top",
+	"background-color": "#FFF",
+	"border": "1px solid #F00",
+	"position": "absolute",
+	"right": 50,
+	"top": 50
+});
+</script>
+</body>
+</html>

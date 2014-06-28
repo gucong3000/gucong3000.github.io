@@ -1,0 +1,137 @@
+@import url("common.css");
+@import url("http://fonts.useso.com/css?family=Coming+Soon&v1");
+html {
+	background: url(../img/wall.png);
+	background: url(../img/bg_l.png) no-repeat left top, url(../img/bg_r.png) no-repeat right top, black url(../img/wall.png);
+	color: white;
+}
+body {
+	color: #fff;
+}
+a {
+	text-shadow: 3px 3px 5px red;
+	text-decoration: none;
+	outline: none;
+	color: inherit;
+}
+a:hover {
+	text-shadow: 2px 2px 5px white;
+	color: red;
+}
+nav {
+	transition: box-shadow 1s ease-out;
+	box-shadow: 0 0 100px red;
+	border-radius: 300px;
+	background: url(../img/gucong.png) no-repeat center center;
+	font-family: 'Coming Soon', arial, serif;
+	margin-left: -200px;
+	margin-top: -200px;
+	text-align: center;
+	position: absolute;
+	overflow: visible;
+	font-weight: bold;
+	height: 400px;
+	width: 400px;
+	left: 50%;
+	top: 50%;
+}
+nav:hover {
+	box-shadow: 0 0 100px white;
+}
+nav a {
+	transition: all .3s ease-out;
+	position: absolute;
+	font-size: 40px;
+	z-index: 1;
+}
+nav a:hover {
+	font-size: 48px;
+}
+nav .left {
+	transform-origin: right bottom;
+	transform: rotate(-45deg);
+	bottom: 420px;
+	right: 320px;
+}
+nav .center {
+	text-align: center;
+	width: 180px;
+	bottom: 450px;
+	left: 110px;
+}
+nav .right {
+	transform-origin: left bottom;
+	transform: rotate(45deg);
+	bottom: 420px;
+	left: 320px;
+}
+a:hover,a:focus {
+	color: red;
+}
+section {
+	box-shadow: 0 0 5px rgba(255,0,0,.3);
+	background: rgba(255,255,255,.2);
+	transform-origin: 280px 115px;
+	transition: all .3s ease-out;
+	transform: rotate(-45deg);
+	text-align: center;
+	font-weight: bold;
+	position: fixed;
+	padding: 2px;
+	width: 320px;
+	left: -30px;
+	top: -30px;
+	margin: 0;
+}
+section a {
+	border: 1px dashed black;
+	display: block;
+	padding: 8px;
+}
+section a:hover {
+	border-color: red;
+}
+section a,
+section a:hover,
+section a:active {
+	color: inherit;
+}
+section:hover {
+	background: rgba(255,0,0,.3);
+	box-shadow: 0 0 5px white;
+}
+footer {
+	text-align: center;
+	line-height: 200%;
+	position: fixed;
+	bottom: 40px;
+	width: 100%;
+	left: 0;
+}
+footer .contact {
+	position: absolute;
+	bottom: -40px;
+	width: 100%;
+	left: 0;
+}
+.contact iframe {
+	display: none;
+}
+footer .contact img {
+	transition: all .3s ease-out;
+	display: block;
+	height: 32px;
+	width: 32px;
+}
+footer .contact a {
+	display: inline-block;
+}
+footer .contact a:hover img {
+	height: 64px;
+	width: 64px;
+}
+#html5badge {
+	position: fixed;
+	right: 0;
+	top: 20px;
+}

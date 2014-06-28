@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>board</title>
+<style type="text/css">
+@import url("http://fonts.googleapis.com/css?family=Cabin+Sketch:bold&v1");
+@import url("http://fonts.googleapis.com/css?family=Kranky&v1");
+.board {
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: #064 url(cloud.png);
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='cloud.png', sizingMethod='scale');
+	_background: #064;
+	_height: 800px;
+}
+.board .board_t,
+.board .board_b,
+.board .board_t .board_tl,
+.board .board_t .board_tr {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+}
+.board .board_t {
+ 	background: url(border_t.jpg) repeat-x center top;
+	height: 30px;
+	top: 0;
+}
+.board .board_t .board_tl,
+.board .board_t .board_tr {
+	width: 240px;
+	height: 200px;
+	top: 30px;
+}
+.board .board_t .board_tl {
+	background: url(cloud_tl.png) no-repeat left top;
+	left: 0;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='cloud_tl.png', sizingMethod='scale');
+	_background: none;
+}
+.board .board_t .board_tr {
+	background: url(cloud_tr.png) no-repeat right top;
+	right: 0;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='cloud_tr.png', sizingMethod='scale');
+	_background: none;
+}
+.board .board_b {
+ 	background: url(border_b.jpg) repeat-x center bottom;
+	height: 35px;
+	bottom: 0;
+}
+.board .board_c {
+	text-shadow: 0 0 .5px rgba(255,255,255,.8);
+	font-family: Kranky, arial, serif;
+	word-wrap: break-word;
+	word-break:break-all;
+	padding: 100px 80px;
+	position: relative;
+	font-size: 48px;
+	z-index: 1;
+	
+	color: #fff;			/*IE8*/
+	color: rgba(0,0,0,0);
+	*color: #fff;			/*IE5-8*/
+}
+.board h1 {
+	text-shadow: 0 0 1px rgba(255,255,255,.7);
+	font-family: 'Cabin Sketch', arial, serif;
+	font-size: 96px;
+}
+</style>
+</head>
+
+<body>
+<div class="board">
+	<div class="board_t">
+		<div class="board_tl"></div>
+		<div class="board_tr"></div>
+	</div>
+	<div class="board_b"></div>
+	<div class="board_c">
+		<h1>The quick brown fox jumps over the lazy dog.</h1>
+		The quick brown fox jumps over the lazy dog.
+		The quick brown fox jumps over the lazy dog.
+		The quick brown fox jumps over the lazy dog.
+	</div>
+</div>
+</body>
+</html>

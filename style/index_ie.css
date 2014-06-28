@@ -1,0 +1,119 @@
+@import url("common.css");
+@import url("http://www.google.com/webfonts/css?kit=XGCfUngDeTW_J55De0nI1t6reBpb5eE8fieKsSfP964");
+html {
+	background: #000 url(../img/wall.png) fixed;
+	overflow-x: hidden;
+	color: white;
+}
+#bgl,
+#bgr {
+	height: 400px;
+	width: 450px;
+	z-index: 0;
+}
+#bgl {
+	background: url(../img/bg_l.png) no-repeat left top;
+	left: 0;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg_l.png', sizingMethod='image');
+	_background: none;
+}
+#bgr {
+	background: url(../img/bg_r.png) no-repeat right top;
+	right: 0;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg_r.png', sizingMethod='image');
+	_background: none;
+}
+#nav {
+	position: absolute;
+	overflow: visible;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+}
+#nav .shadow {
+	background: url(../img/logo_ie.png) no-repeat center center;
+	position: absolute;
+	height: 600px;
+	width: 600px;
+	left: -300px;
+	top: -300px;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/logo_ie.png', sizingMethod='image');
+	_background: none;
+}
+#nav .cont {
+	position: absolute;
+	overflow: visible;
+	height: 400px;
+	width: 400px;
+	left: -200px;
+	top: -200px;
+}
+#nav a {
+	font-family: "Cabin Sketch", Arial;
+    font-weight: bold;
+	font-size: 40px;
+	color: white;
+	_zoom: 1;
+}
+#nav a:hover {
+	font-size: 48px;
+}
+#bgl,
+#bgr,
+#nav .left,
+#nav .right {
+	position: absolute;
+	top: 0;
+}
+#nav .left {
+	left: -50px;
+}
+#nav .right {
+	right: -50px;
+}
+#section, #footer {
+	position: fixed;
+	z-index: 1;
+	_position: absolute;
+}
+#section {
+	text-decoration: none;
+	width: 300px;
+	left: -30px;
+	top: -30px;
+}
+#section div {
+	text-align: center;
+	font-weight: bold;
+	background: #333;
+	padding: 10px;
+	color: #fff;
+}
+#section:hover div {
+	filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#33FF0000,endColorStr=#33FF0000);
+}
+#footer {
+	line-height: 200%;
+	width: 100%;
+	bottom: 0;
+}
+#info {
+	filter : progid:DXImageTransform.Microsoft.gradient(startColorStr=#33FF0000,endColorStr=#33FF0000);
+	text-align: center;
+	position: relative;
+	padding: 20px 0;
+	margin: auto;
+	width: 500px;
+	z-index: 1;
+}
+#ie6_countdown {
+	position: relative;
+	padding-top: 15px;
+	height: 59px;
+	margin: auto;
+	width: 820px;
+	clear: both;
+}
+#section {
+	filter: progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand',Dx=0,Dy=0,M11=0.7,M12=0.7,M21=-0.7,M22=0.7);
+}

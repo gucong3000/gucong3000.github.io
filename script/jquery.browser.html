@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery.js"></script>
+<script src="jquery.browser.js"></script>
+</head>
+
+<body>
+<script>
+for(var i in $.browser){
+	document.writeln(i);
+	document.writeln("<br>");
+	document.writeln($.browser[i]);
+	document.writeln("<p>-------------------------</p>");
+}
+document.writeln($.browser.cmpVersion("chrome", "28.0.1500.72"));
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+	font-size: 100%;
+	padding: 0;
+	margin: 0;
+}
+html {
+	_background: url(about:blank) fixed;
+	-webkit-text-size-adjust: none;
+	overflow: auto;
+}
+body {
+	font-family: "WenQuanYi Micro Hei", "Microsoft YaHei", \5FAE\8F6F\96C5\9ED1, "微软雅黑";
+	overflow: visible;
+	font-size: 12px;
+	_width: expression(parentNode.clientWidth - offsetWidth + clientWidth);
+	_behavior: url("csshover3.htc");
+}
+td, th, button, select, textarea {
+	*font-family: expression(parentNode.currentStyle.fontFamily);
+	font-family: inherit;
+}
+html,body {
+	min-height: 100%;
+	_height: 100%;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:active,
+a:focus,
+a:hover {
+	text-decoration: underline;
+}
+a,
+input,
+button,
+select,
+textarea {
+	*outline: expression(this.hideFocus=true);
+	outline: none;
+}
+input[type="reset"], input[type="submit"], input[type="button"], button {
+	overflow: visible;
+}
+input[type="radio"], input[type="range"], input[type="checkbox"] {
+	background: none;
+	padding: 0;
+	border: 0;
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="url"] {
+	*font-family: expression(parentNode.currentStyle.fontFamily);
+	border: 1px solid #CCC;
+	background: #fff;
+	padding: 5px;
+	behavior: url("textbox.htc");
+}
+textarea {
+	border: 1px solid #CCC;
+	vertical-align: top;
+	background: #fff;
+	resize: vertical;
+	overflow: auto;
+	padding: 6px;
+	height: 80px;
+	width: 150px;
+	behavior: url("textbox.htc");
+}
+textarea, input {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: #8c8c8c;
+}
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	vertical-align: middle;
+	_behavior: expression(type=="text" || type=="password" ? 'url("textbox.htc")' : '');
+	*font-family: expression(type=="text" || type=="password" ? parentNode.currentStyle.fontFamily: '');
+}
+.input_text, .input_password {
+	_font-family: expression(parentNode.currentStyle.fontFamily);
+	_border: 1px solid #CCC;
+	_background: #fff;
+	_padding: 5px;
+}
+.input_reset, .input_submit, .input_button, button {
+	_overflow: visible;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="email"]:focus, input[type="url"]:focus {
+	border-color: #79c0f2;
+}
+textarea:focus {
+	border-color: #79c0f2;
+}
+input.input_text_focus, input.input_password_focus, .textarea_focus {
+	border-color: #79c0f2 ;
+}
+::-webkit-input-placeholder {
+	color: #bfbfbf;
+}
+:-moz-placeholder {
+	color: #bfbfbf;
+}
+input-placeholder, textarea-placeholder{
+	color: #bfbfbf;
+}
+::-webkit-search-decoration,
+::-webkit-search-cancel-button {
+	display: none;
+}
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+table {
+	empty-cells: show;
+	border-collapse: collapse;
+}
+table,th,td {
+	border: 0 solid #eee;
+}
+caption {
+	font-size: large;
+	font-weight: bold;
+}
+th {
+	word-break: keep-all;
+	white-space: nowrap;
+	font-weight: normal;
+	text-align: left;
+}
+iframe {
+	border: 0;
+}
+label, select, progress {
+	vertical-align: middle;
+	display: inline-block;
+}
+select {
+	border: 1px solid #79c0f2;
+	background: #fff;
+	color: #666;
+	*behavior: url("select.htc");
+}
+/*HTML5标签*/

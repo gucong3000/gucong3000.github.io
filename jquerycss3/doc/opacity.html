@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>css("opacity")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式opacity。</p>
+<p>IE下通过，如果元素设置了Alpha滤镜，则返回Alpha滤镜设置的Opacity/100</p>
+<h3>示例</h3>
+<code>alert($("#qqmsg").css("opacity"));</code>
+<hr>
+<h2>css("opacity", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置一个样式opacity的值。</p>
+<p>IE9 以下或IE怪癖模式下通过jQuery.css3插件实现。</p>
+<h3>可用值</h3>
+<p>0-1之间的数字,0完全透明，1为不透明</p>
+<h3>示例</h3>
+<code>$("#qqmsg").css("opacity",0.3);</code>
+<div id="demo">这里是一个示例<br>
+请拖动滚动条→<br>
+opacity:0.6</div>
+<script type="text/javascript">
+$("#demo").css({
+	"background": "rgb(255,255,0)",
+	"position": "fixed",
+	"opacity": 0.3,
+	"width": 100,
+	"right": 18,
+	"top": 5
+});
+</script>
+</body>
+</html>

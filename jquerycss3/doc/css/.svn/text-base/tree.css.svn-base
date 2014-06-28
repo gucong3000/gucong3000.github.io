@@ -1,0 +1,7 @@
+@import url("base.css");
+body {
+	margin: 1em 0.5em;
+}
+li {
+	padding: 5px 0;
+}

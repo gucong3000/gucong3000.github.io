@@ -1,0 +1,43 @@
+@import url("base.css");
+@import url("http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css");
+h1,h2,h3,h4,body {
+	font-size: 10pt;
+}
+h1,h2,h3,h4 {
+	padding-left: 1em;
+	text-align: left;
+	margin: 6px 0;
+	padding: 5px;
+	color: #FFF;
+}
+p {
+	text-indent: 2em;
+	line-height: 150%;
+}
+code {
+	padding: 1em;
+	border: 1px dashed #600;
+}
+p,code {
+	margin: 0;
+}
+hr {
+	margin: 12px 0;
+}
+h1 {
+	background: #09C;
+}
+h2 {
+	background: #0CC;
+}
+h3 {
+	background: #3CF;
+}
+p,h3,code {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+#meebo {
+	visibility: hidden;
+	height: 0;
+}

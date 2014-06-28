@@ -1,0 +1,31 @@
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:ATTACH EVENT="onpropertychange" FOR="element" ONEVENT="change()" />
+<PUBLIC:ATTACH EVENT="oncontentready" FOR="element" ONEVENT="checked()" />
+<SCRIPT LANGUAGE="JScript">
+var tt,
+	elm = element,
+	val = elm.checked,
+	doc = elm.document;
+
+function change(){
+	if(doc.documentMode > 8 ){
+		return;
+	}
+
+	if(val != elm.checked){
+		val = elm.checked;
+		checked();
+	}
+}	
+	
+function checked(){
+	if(tt){
+		tt.className = val ? "checked" : "";
+	}else if(val){
+		tt = doc.createElement("tt");
+		tt.className = "checked";
+		elm.parentNode.insertBefore(tt, elm);
+	}
+}
+</SCRIPT>
+</PUBLIC:COMPONENT>

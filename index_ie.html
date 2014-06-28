@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="imagetoolbar" content="no">
+<title></title>
+<link href="style/index_ie.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--[if lt IE 8]>
+	<div id="ie6_countdown">
+		<a href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie?ocid=ie6_countdown_bannercode">
+			<img src="http://theie6countdown.cn/img/banner/warning_bar_0027_Simplified%20Chinese.jpg" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+		</a>
+	</div>
+<![endif]--> 
+<div id="info">
+	如果您正在使用双核浏览器，请立即切换到高速模式<br>
+	建议您使用以下浏览器，以便浏览本站的HTML5版本：<br>
+	Firefox 5、Chrome 12、Safari 5、Opera 11、Maxthon 3。<br>
+	IE用户也可以点击上方的提示安装"Google 浏览器内嵌框架"。
+</div>
+<div id="bgl"></div>
+<div id="bgr"></div>
+<div id="nav">
+	<div class="shadow"></div>
+	<div class="cont">
+		<a href="blog" class="left">blog</a>
+		<a href="photos" class="center">photos</a>
+		<a href="microbo" class="right">microbo</a>
+	</div>
+</div>
+<a href="http://jquerycss3.googlecode.com/" id="section">
+	<div>jQuery跨浏览器CSS3支持插件</div>
+</a>
+<div id="footer">
+	<script src="http://fw.qq.com/ipaddress" charset="gb2312"></script>
+	<script>
+		document.cookie = "MeeboBarHidden=1";
+		if(top == window){
+			window.location = "/";
+		}
+		if(IPData[0]){
+			document.writeln("<div>您的IP: "+IPData[0] + "</div>");
+		}
+		if(IPData[2]){
+			document.writeln("您的地址: " + IPData[2] + " " + IPData[3]);
+		}
+	</script>
+	<br>
+	<a target="_blank" href="http://wpa.qq.com/msgrd?uin=64272001">
+		<img src="http://wpa.qq.com/pa?p=2:64272001:50">
+	</a>
+</div>
+</body>
+</html>

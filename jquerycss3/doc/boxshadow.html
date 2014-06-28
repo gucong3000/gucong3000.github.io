@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<p>设置块阴影</p>
+<hr>
+<h2>css("box-shadow")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式box-shadow。</p>
+<h3>示例</h3>
+<code>alert($("#nav li").css("box-shadow"));</code>
+<hr>
+<h2>css("box-shadow", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式box-shadow的值。</p>
+<p>IE下通过jQuery.CSS3插件实现。</p>
+<p>jQuery.CSS3插件会统一不同浏览器下的块阴影语法，使用统一的语法即可。</p>
+<h3>可用值</h3>
+<p>&lt;length&gt;&lt;length&gt;&lt;length&gt; || &lt;color&gt;：阴影水平偏移值（可取正负值）；阴影垂直偏移值（可取正负值）；阴影模糊值；阴影颜色 </p>
+<h3>示例</h3>
+<code>$("#nav li").css("box-shadow","#000 5px 2px 6px");
+$("#nav li").css("box-shadow","5px 2px 6px rgba(0, 0, 0, .6)");
+</code>
+<div id="demo">这里是一个示例<br>
+请拖动滚动条→<br>
+box-shadow:5px 2px 6px rgba(0, 0, 0, .6)</div>
+<script type="text/javascript">
+$("#demo").css({
+	"box-shadow": "5px 2px 10px rgba(0, 0, 0, .6)",
+	"background-color": "#FFF",
+	"position": "fixed",
+	"right": 20,
+	"top": 5
+});
+</script>
+</body>
+</html>

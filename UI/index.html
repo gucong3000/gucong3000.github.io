@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="imagetoolbar" content="no">
+<title>ui</title>
+<!--[if lt IE 9]>
+<script src="../script/jquery.min.js"></script>
+<script src="../script/selectivizr-min.js"></script>
+<![endif]-->
+<link href="../style/base.css" rel="stylesheet" type="text/css">
+<link href="../style/input.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<label class="ui_select">
+	<div class="ui_select_txt">请选择</div>
+	<div class="ui_select_ico"></div>
+	<div class="ui_select_ctrl">
+		<select>
+			<option>asdasd</option>
+			<option>asdasd</option>
+			<option>asdasd</option>
+		</select>
+	</div>
+</label>
+<br>
+<br>
+<br>
+<form novalidate>
+
+使用规范：<br>
+1.文本框内提示文字需使用placeholder即可<br>
+2.文本框外提示文字需使用label标签包裹，以for属性指明input的id<br>
+3.文本框外提示文字若为纯中文，则可能不能与文本框垂直对齐，请在两者之间插入空白、换行或者&amp;nbsp;<br>
+4.autofocus属性可以使文本框自动获得焦点。
+<br>
+<br>
+<label for="username">用户名</label>
+<span class="form_err">
+<input name="username" type="text" id="username" placeholder="email地址就是用户名">
+</span>
+<br>
+<br>
+<label for="pwd">密　码</label>
+<input name="pwd" type="password" id="pwd" placeholder="密码不得少于八位">
+<br>
+<br>
+<input type="date" placeholder="日期">
+input type=&quot;date&quot;
+<br>
+<br>
+<input type="url" placeholder="个人主页" autofocus>
+input type=&quot;url&quot; autofocus
+<br>
+<br>
+<input type="email" placeholder="电子邮箱">
+input type=&quot;email&quot;
+<br>
+<br>
+<input type="password" placeholder="密码">
+input type=&quot;password&quot;
+<br>
+<br>
+<input type="text" placeholder="姓名">
+input type=&quot;text&quot;
+<br>
+<br>
+<textarea placeholder="个人简介" class=""></textarea>
+textarea
+<br>
+<br>
+<input type="submit" value="提交表单">
+</form>
+<br>
+<br>
+<br>
+<input type="file">
+<br>
+<br>
+<br>
+<label class="ui_heart">
+	<input type="checkbox">
+</label>
+<br>
+<br>
+
+
+<label class="ui_checkbox"><input type="checkbox" id="ui_checkbox"></label><label for="ui_checkbox">&nbsp;同意用户协议</label>
+<br>
+<br>
+
+<label class="ui_radio">
+	<input name="radio1" type="radio" id="yes">
+</label><label for="yes">&nbsp;男</label>
+<br>
+<label class="ui_radio">
+	<input type="radio" name="radio1" id="no" checked="checked">
+</label><label for="no">&nbsp;女</label>
+<br>
+<br>
+disabled
+<span class="disabled">
+	<label class="ui_checkbox">
+		<input type="checkbox" disabled="disabled">
+	</label>&nbsp;<label class="ui_radio">
+		<input type="radio" name="radio2" id="radio2" disabled="disabled">
+	</label>&nbsp;<label class="ui_radio">
+		<input type="radio" name="radio2" id="radio2" checked="checked" disabled="disabled">
+	</label>
+</span>
+<br>
+<br>
+
+
+
+<a href="javascript:void(0)" class="ui_button">
+	<div><input type="button" value="按钮"></div>
+</a>
+input type=button
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button">
+	<div><input type="submit" value="提交"></div>
+</a>
+input type=submit
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button">
+	<div><input type="reset" value="重置"></div>
+</a>
+input type=reset
+<br>
+<br>
+
+<a href="javascript:void(0)" class="ui_button_del">
+	<div><input type="button" value="按钮"></div>
+</a>
+input type=button
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button_del">
+	<div><input type="submit" value="提交"></div>
+</a>
+input type=submit
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button_del">
+	<div><input type="reset" value="重置"></div>
+</a>
+input type=reset
+<br>
+<br>
+
+
+<a href="javascript:void(0)" class="ui_button_esc">
+	<div><input type="button" value="按钮"></div>
+</a>
+input type=button
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button_esc">
+	<div><input type="submit" value="提交"></div>
+</a>
+input type=submit
+<br>
+<br>
+<a href="javascript:void(0)" class="ui_button_esc">
+	<div><input type="reset" value="重置"></div>
+</a>
+input type=reset
+<br>
+<br>
+<a href="#" class="ui_button">
+	<div><span>确定</span></div>
+</a>
+a href=#
+<br>
+<br>
+<a href="#" class="ui_button_esc">
+	<div><span>取消</span></div>
+</a>
+a href=#
+<br>
+<br>
+<a href="#" class="ui_button_del">
+	<div><span>删除</span></div>
+</a>
+a href=#
+<br>
+<br>
+asdasdsadasdasd
+<span class="ui_menu">
+	<a href="#">翻页
+		<span></span>
+	</a>
+	<ul>
+		<li>
+			<a href="#">1asddddasdasdsad</a>
+		</li>
+		<li>
+			<a href="#">2</a>
+		</li>
+		<li>
+			<a href="#">3</a>
+		</li>
+	</ul>
+</span>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

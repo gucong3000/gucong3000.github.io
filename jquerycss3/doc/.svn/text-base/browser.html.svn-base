@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>jQuery.browser</h2>
+<h3>概述</h3>
+<p>获取可靠的浏览器及其版本信息，采用浏览器对象检测技术，其可靠性高于传统的 navigator.userAgent 判断，可直接用于浏览器判断。</p>
+<h3>示例</h3>
+<code>if($.browser.msie&lt;7){
+	alert("请使用IE7+或其他非IE内核浏览器浏览本站。");
+}
+</code>
+<hr>
+<h2>jQuery.browser.language</h2>
+<h3>概述</h3>
+<p>获取浏览器语言。</p>
+<h3>示例</h3>
+<code>alert($.browser.language);</code>
+<hr>
+<h2>jQuery.browser.msie</h2>
+<h3>概述</h3>
+<p>在IE浏览器下返回IE的页面渲染模式。</p>
+<p>当HTML文档中没有声明文档类型(DTD),用IE浏览器浏览该页面时，IE会运行于怪癖模式下，不论你使用哪个版本的IE，这时IE采用IE5的页面渲染模式。如不需要文档类型，又要避免怪癖模式，可在文档首行添加："&lt;!DOCTYPE HTML&gt;",这是HTML5的DTD，比较简短，又能避开怪癖模式。</p>
+<h3>示例</h3>
+<code>if($.browser.msie){
+	alert("您的浏览器运行于IE" + $.browser.msie + "模式下");
+}
+</code>
+<hr>
+<h2>jQuery.browser.version</h2>
+<h3>概述</h3>
+<p>在IE浏览器下返回IE版本号。</p>
+<p>其他浏览器下与原生jQuery一致。</p>
+<h3>示例</h3>
+<code>if($.browser.msie){
+	alert("您正在使用Internet Explorer " + $.browser.version);
+}
+</code>
+<hr>
+<h2>jQuery.browser.mozilla</h2>
+<h3>概述</h3>
+<p>在 Gecko 内核浏览器(Firefox等)下返回编译时间。 </p>
+<h3>示例</h3>
+<code>if($.browser.gecko){
+	alert("您的Firefox编译时间为：" + $.browser.gecko);
+}
+</code>
+<hr>
+<h2>jQuery.browser.opera</h2>
+<h3>概述</h3>
+<p>在 Opera 浏览器中返回 Opera 的版本号 。 </p>
+<h3>示例</h3>
+<code>if($.browser.opera){
+	alert("欢迎使用Opera " + $.browser.opera);
+}
+</code>
+<hr>
+<h2>jQuery.browser.webkit</h2>
+<h3>概述</h3>
+<p>在 Webkit 内核浏览器(Safari、Chrome等)下返回Webkit版本号。 </p>
+<h3>示例</h3>
+<code>if($.browser.webkit){
+	alert("您的浏览器使用Webkit " + $.browser.webkit + "内核");
+}
+</code>
+<hr>
+<h2>jQuery.browser.chrome</h2>
+<h3>概述</h3>
+<p>在Chrome浏览器中返回 true 。</p>
+<p>Google Chrome 浏览器采用版本自动更新机制，用户在浏览网页时Chrome会自动检测并后台安装最新版本的Chrome浏览器，所以我们可以无视其版本号，认为用户使用的是最新版本的Chrome。</p>
+<h3>示例</h3>
+<code>if($.browser.chrome){
+	alert("欢迎使用Google Chrome");
+}
+</code>
+<hr>
+<h2>jQuery.browser.maxthon</h2>
+<h3>概述</h3>
+<p>在 Maxthon 3.0 以上版本运行于高速模式时返回 Maxthon 的版本号，兼容模式按照IE处理。 </p>
+<h3>示例</h3>
+<code>if($.browser.maxthon){
+	alert("欢迎使用Maxthon " + $.browser.maxthon);
+}
+</code>
+</body>
+</html>

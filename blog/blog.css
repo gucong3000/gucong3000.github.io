@@ -1,0 +1,112 @@
+html,body,html body center {
+	overflow: hidden;
+	height: 100%;
+}
+html body center div#main {
+	position: absolute !important;
+	max-width: none !important;
+	height: 100% !important;
+	width: 100% !important;
+	padding: 0 !important;
+	left: 0 !important;
+	top: 0 !important;
+}
+#main #header {
+	background: url(http://gucong.co.cc/img/gucong.png) no-repeat center 20px;
+	overflow: hidden;
+	height: 500px;
+}
+#header .lc {
+	background: url(http://gucong.co.cc/img/bg_l.png) no-repeat left top;
+	height: 100%;
+}
+#header .rc {
+	background: url(http://gucong.co.cc/img/bg_r.png) no-repeat right top;
+}
+.mod,
+.userbar,
+#m_track,
+#comm_info,
+#in_related_doc,
+#mod_bloglist>table {
+	display: none;
+}
+#m_blog table {
+	display: table;
+	width: 100%;
+}
+html body center center #ft {
+	display: none !important;
+}
+#main .stage,
+#mod_bloglist {
+	position: absolute;
+	display: block;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+#main .stage {
+	overflow: auto;
+	height: 100%;
+}
+#main #layout td {
+	width: auto;
+	padding: 0;
+}
+#main #layout .c2t1 {
+	width: 100%;
+}
+#m_blog {
+	padding: 100px;
+}
+body {
+	background: url("http://gucong.co.cc/img/wall.png") #333 fixed;
+	font-size: 10pt;
+	color: white;
+}
+a {
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	text-decoration: none;
+	color: #fff;
+}
+a:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.tit {
+	font-size: 200%;
+	line-height: 200%;
+	text-shadow: 1px 1px 4px red; 
+}
+#main #mod_bloglist #m_blog .tit {
+	overflow: visible;
+}
+date {
+	font-size: 60%;
+}
+.cnt {
+	-webkit-box-shadow: 0 0 20px #fff;
+	-moz-box-shadow: 0 0 20px #fff;
+	box-shadow: 0 0 20px #fff;
+
+	text-shadow: 1px 1px 3px #000;
+
+	-webkit-border-radius: 30px; 
+	-moz-border-radius: 30px; 
+	border-radius: 30px; 
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#80ffffff', EndColorStr='#80ffffff');
+	background: rgba(255,255,255,.5);
+	margin: 20px auto;
+	font-size: 100%;
+	padding: 20px;
+	color: #FC3;
+}

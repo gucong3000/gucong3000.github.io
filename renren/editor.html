@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>富文本编辑器</title>
+<script src="script/dialog.js"></script>
+<script>
+window.onload = function(){
+	var editor = document.getElementById("editor").children[0];
+
+	function setBtn(id, styleName){
+		var elm = document.getElementById(id);
+		elm.onclick = function(){
+			editor.style[styleName] = setting[id] = !setting[id] ? id : "";
+		}
+	}
+
+	//setBtn("bold", "fontWeight");
+	setBtn("left", "textAlign");
+	setBtn("center", "textAlign");
+	setBtn("right", "textAlign");
+
+	function setMenu(id, styleName){
+		var elm = document.getElementById(id);
+		function change(){
+			editor.style[id] = elm.value || elm.children[elm.selectedIndex].innerHTML;
+		}
+		change();
+		elm.onchange = change;
+	}
+
+	setMenu("color");
+	setMenu("fontSize");
+	setMenu("fontFamily");
+	
+	function setChecked(id, styleName){
+		var elm = document.getElementById(id);
+		function change(){
+			editor.style[elm.name] = elm.checked ? this.value : "";
+		}
+		change();
+		elm.onchange = elm.onpropertychange = change;
+	}
+	
+	setChecked("bold");
+	setChecked("left");
+	setChecked("center");
+	setChecked("right");
+	var link = document.getElementById("link"),
+		img = document.getElementById("img");
+	
+	document.getElementById("img").onclick = function(){
+		var url = prompt("请输入图片url", "http://"),
+			img;
+		if(url){
+			img = new Image();
+			img.src = url;
+			editor.appendChild(img)
+		}
+	}
+
+	document.getElementById("lnk").onclick = function(){
+		var url = prompt("请输入链接url", "http://"),
+			lnk;
+		if(url){
+			lnk = document.createElement("a");
+			lnk.href = url;
+			lnk.innerHTML = prompt("请输入链接文字或者点击取消", "") || url;
+			editor.appendChild(lnk)
+		}
+	}
+
+};
+</script>
+<link href="style/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#wrap {
+	padding: 100px;
+}
+#wrap p {
+	padding-bottom: 20px;
+	line-height: 30px;
+}
+#wrap p * {
+	vertical-align: middle;
+}
+button {
+	padding: 0 10px;
+}
+#editor {
+	border: 2px inset #ccc;
+	font-family: SimSun;
+	overflow: hidden;
+	cursor: text;
+	margin: auto;
+}
+#editor div{
+	height: 500px;
+	outline: none;
+	padding: 10px;
+}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+	<p>
+		对齐方式：
+		<input type="radio" id="left" name="textAlign" value="left" checked>
+		<label for="left">左对齐</label>
+		<input type="radio" id="center" name="textAlign" value="center">
+		<label for="center">居中对齐</label>
+		<input type="radio" id="right" name="textAlign" value="right">
+		<label for="right">右对齐</label>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<input type="checkbox" id="bold" name="fontWeight" value="bold">
+		<label for="bold"><b>字体加粗</b></label>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<button id="lnk">插入超链接</button>
+		<button id="img">插入图片</button>
+		<br>
+		设置字体
+		<select id="fontFamily">
+			<option value="SimSun" selected>宋体</option>
+			<option value="NSimSun" selected>新宋体</option>
+			<option value="SimHei" selected>黑体</option>
+			<option value="FangSong">仿宋</option>
+			<option value="FangSong_GB2312">仿宋_GB2312</option>
+			<option value="KaiTi">楷体</option>
+			<option value="KaiTi_GB2312">楷体_GB2312</option>
+		</select>
+		&nbsp; 设置字号
+		<select id="fontSize">
+			<option selected>12px</option>
+			<option>14px</option>
+			<option>16px</option>
+			<option>18px</option>
+			<option>20px</option>
+		</select>
+		&nbsp; 设置字体颜色:
+		<select id="color">
+			<option selected>black
+			<option>silver</option>
+			<option>gray</option>
+			<option>white</option>
+			<option>maroon</option>
+			<option>red</option>
+			<option>purple</option>
+			<option>fuchsia</option>
+			<option>green</option>
+			<option>lime</option>
+			<option>olive</option>
+			<option>yellow</option>
+			<option>navy</option>
+			<option>blue</option>
+			<option>teal</option>
+			<option>aqua</option>
+		</select>
+	</p>
+	<div id="editor">
+		<div contentEditable></div>
+	</div>
+</div>
+</body>
+</html>

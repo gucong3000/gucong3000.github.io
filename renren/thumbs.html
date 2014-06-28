@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>缩略图滚动显示</title>
+<script src="../script/base.js"></script>
+<script>
+document.realy(function($){
+	var thumbs = document.querySelector(".thumbs"),
+		left = thumbs.querySelector(".scroll_left"),
+		right = thumbs.querySelector(".scroll_right"),
+		cont = thumbs.querySelector("ul"),
+		items = cont.querySelectorAll("li");
+	//console.log(scrollStep);
+
+	function scrollFun(val){
+		val = cont.scrollLeft += (items[1].offsetLeft - items[0].offsetLeft) * val;
+		if(val<=0){
+			$.addClass(left, "disabled");
+		}else if (val >= (cont.scrollWidth - cont.clientWidth)){
+			$.addClass(right, "disabled");
+		}
+	}
+
+	function sLeft(){
+		scrollFun(-1);
+		$.delClass(right, "disabled");
+		return false;
+	}
+	
+	function sRight(){
+		scrollFun(1);
+		$.delClass(left, "disabled");
+		return false;
+	}
+
+	left.onclick = sLeft;
+	right.onclick = sRight;
+
+	cont.addEventListener("onmousewheel" in cont ? "mousewheel" : "DOMMouseScroll", function(e){
+		if(( e.detail || -e.wheelDelta) > 0){
+			sRight();
+		}else{
+			sLeft();
+		}
+		e.preventDefault();
+		return false;
+	},true);
+});
+</script>
+<link href="style/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#wrap {
+	padding-top: 100px;
+}
+.thumbs {
+	overflow: hidden;
+	margin: 0 100px;
+}
+.thumbs ul {
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: auto;
+	font-size: 1px;
+	_width: expression(document.documentElement.clientWidth-280);
+}
+.thumbs li {
+	list-style: none;
+	display: inline;
+}
+.thumbs a {
+	border: 2px solid #B7B7B7;
+	text-decoration: none;
+	display: inline-block;
+	outline: none;
+	margin: 0 9px;
+}
+.thumbs img {
+	vertical-align: top;
+	width: 115px;
+	height: 85px;
+}
+.thumbs a:hover {
+	border-color: #65B6DD;
+}
+.thumbs a:focus,
+.thumbs a:active {
+	border-color: #0084B4;
+}
+.thumbs .scroll_left,
+.thumbs .scroll_right {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	font-family: SimHei;
+	background: #65B6DD;
+	text-align: center;
+	line-height: 85px;
+	overflow: hidden;
+	font-size: 20px;
+	cursor: pointer;
+	height: 85px;
+	width: 20px;
+	color: #fff;
+	behavior: url("PIE.htc");
+}
+.thumbs .scroll_left {
+	-webkit-border-radius: 10px 3px 3px 10px;
+	   -moz-border-radius: 10px 3px 3px 10px;
+			border-radius: 10px 3px 3px 10px;
+	margin-right: 15px;
+	float: left;
+}
+.thumbs .scroll_right {
+	-webkit-border-radius: 3px 10px 10px 3px;
+	   -moz-border-radius: 3px 10px 10px 3px;
+			border-radius: 3px 10px 10px 3px;
+	margin-left: 15px;
+	float: right;
+}
+* html .thumbs .scroll_left,
+* html .thumbs .scroll_right {
+	_margin: 0;
+}
+.thumbs .disabled {
+	cursor: not-allowed;
+	background: #CCC;
+	color: #999;
+}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+	<div class="thumbs" unselectable="on">
+		<a class="scroll_left disabled">←</a>
+		<a class="scroll_right">→</a>
+		<ul>
+			<li><a href="#"><img src="img/s4.jpg"></a></li>
+			<li><a href="#"><img src="img/twopop.jpg"></a></li>
+			<li><a href="#"><img src="img/twomm.jpg"></a></li>
+			<li><a href="#"><img src="img/girl2.jpg"></a></li>
+			<li><a href="#"><img src="img/car.jpg"></a></li>
+			<li><a href="#"><img src="img/war.jpg"></a></li>
+			<li><a href="#"><img src="img/twomm.jpg"></a></li>
+			<li><a href="#"><img src="img/girl2.jpg"></a></li>
+			<li><a href="#"><img src="img/car.jpg"></a></li>
+			<li><a href="#"><img src="img/war.jpg"></a></li>
+			<li><a href="#"><img src="img/twomm.jpg"></a></li>
+			<li><a href="#"><img src="img/girl2.jpg"></a></li>
+			<li><a href="#"><img src="img/car.jpg"></a></li>
+			<li><a href="#"><img src="img/war.jpg"></a></li>
+			<li><a href="#"><img src="img/twomm.jpg"></a></li>
+			<li><a href="#"><img src="img/girl2.jpg"></a></li>
+			<li><a href="#"><img src="img/car.jpg"></a></li>
+			<li><a href="#"><img src="img/war.jpg"></a></li>
+			<li><a href="#"><img src="img/twomm.jpg"></a></li>
+			<li><a href="#"><img src="img/girl2.jpg"></a></li>
+			<li><a href="#"><img src="img/car.jpg"></a></li>
+			<li><a href="#"><img src="img/war.jpg"></a></li>
+		</ul>
+	
+	</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+</body>
+</html>

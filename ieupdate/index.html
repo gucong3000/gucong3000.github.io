@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<script type="text/javascript">
+with(frameElement) {
+	scrolling = "NO";
+	noresize = true;
+}
+/*@cc_on
+@if ( @_jscript_version < 5.8 )
+	var size = window.onresize = function(){
+		try{
+			var height = document.body.offsetHeight;
+			if(frameElement.parentNode.rows){
+				frameElement.parentNode.rows = height + ",*";
+			}else{
+				frameElement.style.height = height;
+			}
+		}catch(ex){}
+	}
+
+	window.onload = function(){
+		document.getElementById("close").onclick = function(){
+			with(document.body.style){
+				width = height = 0;
+			}
+			return false;
+		};
+		if(frameElement){
+			if(frameElement.title){
+				document.getElementById("msg").innerHTML = frameElement.title + "&nbsp;";
+			}
+
+			if(frameElement.href){
+				document.getElementById("link").href = frameElement.href;
+			}
+
+			if(/^iframe$/i.test(frameElement.tagName)){
+				with(frameElement.style){
+					position = "fixed";
+					width = "100%";
+					left = 0;
+					top = 0;
+					if(!("XMLHttpRequest" in window)) {
+						position = "absolute";
+						setExpression("top", "offsetParent.scrollTop");
+						setExpression("width", "offsetParent.clientWidth || '100%'");
+						with(frameElement.offsetParent){
+							if(currentStyle.backgroundImage == "none"){
+								style.backgroundImage = "url(about:blank)";
+								style.backgroundAttachment = "fixed";
+							}
+						}
+					}
+				}
+			}
+		}
+		size();
+	}
+@else @*/
+try{
+	frameElement.style.display = "none";
+	frameElement.parentNode.rows = "0,*";
+}catch(e){}
+/*@end @*/
+</script>
+<style type="text/css">
+html,body {
+	padding: 0;
+	margin: 0;
+}
+body {
+	border-bottom: threeddarkshadow 1px solid;
+	overflow: hidden;
+}
+a {
+	border-bottom: buttonshadow 1px solid;
+	font-family: "Microsoft YaHei";
+	background: infobackground;
+	text-decoration: none;
+	cursor: default;
+	color: infotext;
+	font-size: 9pt;
+	display: block;
+	padding: 3px 5px;
+}
+a:hover {
+	background: highlight;
+	color: highlighttext;
+}
+a img {
+	float: right;
+	padding: 3px;
+	border: 0;
+}
+a:hover img {
+	filter: Invert();
+}
+#msg {
+	background: url(security.png) no-repeat left top;
+	padding-left: 20px;
+	overflow: hidden;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(src='security.png', sizingMethod='crop');
+	_background: none;
+	_zoom: 1;
+}
+</style>
+</head>
+<body>
+<a href="http://www.google.com/chromeframe/eula.html?msi=true" target="_blank" id="link">
+<img id="close" src="close.gif">
+<div id="msg">Internet Explorer 缺少必要的更新来浏览此网页。点击这里访问 Windows Update 获取更新...</div>
+</a>
+</body>
+</html>

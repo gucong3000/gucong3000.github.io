@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出菜单</title>
+<script src="script/base.js"></script>
+<script>
+document.realy(function($){
+	var menu = document.querySelector(".popmenu")
+		menupop = menu.children[0],
+		html = document.documentElement;
+
+	document.addEventListener("click", function(e){
+		menu.style.left = menu.style.top = "-9999%";
+	}, false);
+	
+	document.addEventListener("contextmenu", popup, false);
+
+	function popup(e){
+		var isLeft = e.pageX - html.scrollLeft <　html.clientWidth / 2,
+			isTop = e.pageY - html.scrollTop <　html.clientHeight / 2,
+			left = isLeft ? e.pageX : e.pageX - menupop.offsetWidth,
+			top = isTop ? e.pageY : e.pageY - menupop.offsetHeight;
+	
+		isLeft ? $.addClass(menupop, "isleft") : $.delClass(menupop, "isleft");
+		isTop ? $.addClass(menupop, "istop") : $.delClass(menupop, "istop");
+		
+		menu.style.left = left + "px";
+		menu.style.top = top + "px";
+		e.preventDefault();
+		return false;
+	}
+
+});
+</script>
+<link href="style/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.popmenu ul ul {
+	display: none;
+}
+.popmenu {
+	white-space: nowrap;
+	line-height: normal;
+	top: -9999%;
+}
+.popmenu,
+.popmenu ul {
+	position: absolute;
+}
+.popmenu ul {
+	border: 1px solid #999;
+	list-style: none;
+	background: #ccc;
+	border-top: 0;
+}
+.popmenu li {
+	border-top: 1px solid #999;
+	position: relative;
+	padding: 5px;
+}
+.popmenu li:hover {
+	background: #00F;
+}
+.popmenu li:hover ul {
+	display: block;
+}
+.popmenu ul ul {
+	right: 100%;
+	bottom: 0;
+	left: auto;
+	top: auto;
+}
+.popmenu .istop ul {
+	bottom: auto;
+	top: 0;
+}
+.popmenu .isleft ul {
+	right: auto;
+	left: 100%;
+}
+</style>
+</head>
+
+<body>
+<div class="popmenu">
+	<ul>
+		<li>
+			test1
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>测试文件夹</li>
+				<li>test3</li>
+				<li>test4</li>
+			</ul>
+		</li>
+		<li>
+			test2
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>测试文件夹</li>
+				<li>test3</li>
+				<li>test4</li>
+			</ul>
+		</li>
+		<li>
+			测试文件夹
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>测试文件夹</li>
+				<li>test3</li>
+				<li>test4</li>
+			</ul>
+		</li>
+		<li>
+			test3
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>测试文件夹</li>
+				<li>test3</li>
+				<li>test4</li>
+			</ul>
+		</li>
+		<li>
+			test4
+			<ul>
+				<li>test1</li>
+				<li>test2</li>
+				<li>测试文件夹</li>
+				<li>test3</li>
+				<li>test4</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

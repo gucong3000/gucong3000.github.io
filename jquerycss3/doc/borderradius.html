@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:v="urn:schemeas-microsoft-com:vml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件-border-radius</title>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://www.dillerdesign.com/experiment/DD_roundies/DD_roundies_0.0.2a-min.js">
+</script><![endif]-->
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<p>为对象的边框设置圆角</p>
+<hr>
+<h2>css("border-radius")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式border-radius。</p>
+<p>IE 9 以下不可用。</p>
+<h3>示例</h3>
+<code>alert($("#qqmsg").css("border-radius"));</code>
+<hr>
+<h2>css("border-radius", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式border-radius的值。</p>
+<p>IE9 以下或IE怪癖模式下通过jQuery.CSS3插件调用DD_roundies实现。</p>
+<p>jQuery.CSS3插件会统一不同浏览器下的圆角语法，使用统一的语法即可。</p>
+<p>需使用border-radius，请自行在页面使用条件注释在IE9一下插入DD_roundies</p>
+<h3>可用值</h3>
+<p> &lt;length&gt;{1,4} :由浮点数字和单位标识符组成的长度值,圆角的半径。</p>
+<h3>示例</h3>
+<code>&lt;!--[if lt IE 9]&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;DD_roundies-min.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	$("#in").css("border-radius", "5px 10px");
+&lt;/script&gt;</code>
+<p>&nbsp; </p>
+<h2>css("border-top-left-radius", value)</h2>
+<h2>css("border-top-right-radius", value)</h2>
+<h2>css("border-bottom-left-radius", value)</h2>
+<h2>css("border-bottom-right-radius", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式border-radius的左上、右上、左下、右下值。</p>
+<p>IE9 以下或IE怪癖模式下通过jQuery.CSS3插件调用DD_roundies实现。</p>
+<p>jQuery.CSS3插件会统一不同浏览器下的圆角语法，使用统一的语法即可。</p>
+<h3>可用值</h3>
+<p> &lt;length&gt; :由浮点数字和"px"组成的长度值,圆角的半径。</p>
+<h3>示例</h3>
+<code>$("#qqmsg").css("border-top-left-radius", "5px");
+$("#qqmsg").css("border-top-right-radius", "10px");
+$("#qqmsg").css("border-bottom-left-radius", "15px");
+$("#qqmsg").css("border-bottom-right-radius", 0);</code>
+<div id="demo">
+	<div id="in">这里是一个示例<br>
+		请拖动滚动条→<br>
+		border-radius: 5px 10px
+	</div>
+</div>
+<script type="text/javascript">
+$("#demo").css({
+	"position": "fixed",
+	"right": 18,
+	"top": 5
+});
+$("#in").css({
+	"border-radius": "5px 10px",
+	"background-color": "#FFF",
+	"border": "1px solid #F00"
+});
+</script>
+</body>
+</html>

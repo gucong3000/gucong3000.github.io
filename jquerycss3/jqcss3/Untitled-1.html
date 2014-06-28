@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+#menu {
+	background: #CCC url(search.png);
+	border: 1px solid #999;
+	padding: 100px;
+	width: 100px;
+	margin: auto;
+	color: red;
+}
+</style>
+</head>
+
+<body>
+<div contentextmenu="menu">test</div>
+<div id="menuOut">
+	<menu id="menu">
+		<li><input type="checkbox" />Red</li>
+		<li><input type="checkbox" />blue</li>
+		<li><input type="checkbox" />Red</li>
+		<li><input type="checkbox" />blue</li>
+		<li><input type="checkbox" />Red</li>
+		<li><input type="checkbox" />blue</li>
+		<li><input type="checkbox" />Red</li>
+		<li><input type="checkbox" />blue</li>
+	</menu>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="jquery.css3.js"></script>
+<script>
+$("#menu").css({
+	opacity: .2,
+	transform: "rotate(10deg)",
+	background: $("#menu").css("background-image") + ",linear-gradient(#CCC, #EEE)",
+	boxShadow: "#666 0px 2px 3px",
+	borderRadius: 15
+});
+</script>
+</body>
+</html>

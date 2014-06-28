@@ -1,0 +1,23 @@
+@import url("common.css");
+body {
+	color: white;
+	min-height: 600px;
+	text-align: center;
+	background: black;
+}
+a {
+	color: white;
+}
+a:hover,a:focus {
+	color: red;
+}
+#logo {
+	_zoom: 1;
+	cursor: pointer;
+	_filter: expression("progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.firstChild.src + "',sizingMethod='scale')") ;
+}
+#logo img {
+	width: 512px;
+	height: 512px;
+	_visibility: hidden;
+}

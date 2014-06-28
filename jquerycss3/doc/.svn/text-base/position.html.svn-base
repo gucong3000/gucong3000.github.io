@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>css("position")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式position。</p>
+<p>IE6 或 IE 怪癖模式下，为top设置了expression且position为absolute的元素会返回"fixed"。</p>
+<h3>示例</h3>
+<code>alert($("#qqmsg").css("position"));</code>
+<hr>
+<h2>css("position", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式position的值。</p>
+<p>IE6 或 IE 怪癖模式下通过jQuery.css3插件实现fixed，并修正position设置为absolute或fixed时，设置width或height为"xx%"时宽度和高度有时不正确的问题。 </p>
+<h3>可用值</h3>
+<p>static : 无特殊定位，对象遵循HTML定位规则。</p>
+<p> absolute : 将对象从文档流中拖出，使用left，right，top，bottom等属性进行绝对定位。而其层叠通过z-index属性定义。此时对象不具有边距，但仍有补白和边框。</p>
+<p> relative : 对象不可层叠，但将依据left，right，top，bottom等属性在正常文档流中偏移位置。</p>
+<p> fixed:与absolute类似，但不随滚动条滚动。</p>
+<h3>示例</h3>
+<code>$("#qqmsg").css("right","18px");
+$("#qqmsg").css("bottom",";5px");
+$("#qqmsg").css("position","fixed");</code>
+<div id="demo">这里是一个示例<br>
+请拖动滚动条→<br>
+position:
+<select name="select" id="select">
+	<option value="static">static</option>
+	<option value="absolute">absolute</option>
+	<option value="relative">relative</option>
+	<option value="fixed" selected>fixed</option>
+</select>
+</div>
+<script type="text/javascript">
+$("#demo").css({
+	"border": "1px solid #F00",
+	"background-color": "#FFF",
+	"position": "fixed",
+	"width": 100,
+	"right": 18,
+	"top": 5
+});
+$("#select").change( function() {
+	$("#demo").css("position",$("#select").val());
+});
+</script>
+</body>
+</html>

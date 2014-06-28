@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery-CSS3插件</title>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery.css3.js"></script>
+<script type="text/javascript" src="prettify.js"></script>
+<link href="css/common.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>jQuery.CSS3插件</h1>
+<hr>
+<h2>css("display")</h2>
+<h3>概述</h3>
+<p>访问第一个匹配元素的样式display。</p>
+<h3>示例</h3>
+<code>alert($("#nav li").css("display"));</code>
+<hr>
+<h2>css("display", value)</h2>
+<h3>概述</h3>
+<p>在所有匹配的元素中，设置样式position的值。</p>
+<p>IE8 以下或IE怪癖模式下通过jQuery.CSS3插件实现inline-block。</p>
+<p>修复IE8 以下或IE怪癖模式下display为inline时，宽、高依然有效的Bug。</p>
+<h3>可用值</h3>
+<p>none:隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间</p>
+<p>inline:行内布局,类似&lt;span&gt;标签的默认方式，元素不会占据单独的行，设置其width、height无效(IE下有时有效，不建议使用这一Bug)。</p>
+<p>block:块布局,类似&lt;div&gt;标签的默认方式，元素会单独占据一整行空间,可以设置其width、height。</p>
+<p>inline-block:混合布局，元素不会占据单独的行，可以设置其width、height。</p>
+<h3>示例</h3>
+<code>$("#nav li").css("width","180px");
+$("#nav li").css("display","inline-block");</code>
+<select name="select" id="select">
+    <option value="none">none</option>
+    <option value="block">block</option>
+    <option value="inline">inline</option>
+    <option value="inline-block" selected>inline-block</option>
+</select>
+<span id="demo">这里是一个示例</span>
+这是示例后面的文字
+<script type="text/javascript">
+$("#demo").css({
+	"border": "1px solid #F00",
+	"display": "inline-block",
+	"height": 60,
+	"width": 180
+});
+$("#select").change( function() {
+	$("#demo").css("display",$("#select").val());
+});
+</script>
+</body>
+</html>

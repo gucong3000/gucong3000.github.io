@@ -1,0 +1,221 @@
+﻿<!DOCTYPE HTML>
+<html class="as">
+<head>
+<meta charset="utf-8">
+<title>对话框</title>
+<!--[if lt IE 9]>
+<script src="../script/base.js"></script>
+<![endif]-->
+<link href="style/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#wrap {
+	padding: 100px;
+}
+#dialogbg {
+	background: rgba(0,0,0,.2);
+	overflow: hidden;
+	position: fixed;
+}
+#dialogbg,
+#dialogbg .bgcolor {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	left: 0;
+	top: 0;
+}
+#dialogbg .bgcolor {
+	filter: alpha(opacity=20);
+	background: #000;
+	position: absolute;
+}
+:root #dialogbg .bgcolor {
+	display: none;
+}
+* html #dialogbg {
+	_position: absolute;
+    _top: expression(offsetParent.scrollTop);
+}
+#dialogbg .dialog {
+	-webkit-border-radius: 5px 5px 0 0;
+	   -moz-border-radius: 5px 5px 0 0;
+			border-radius: 5px 5px 0 0;
+	border: 1px solid #666;
+	display: inline-block;
+	position: absolute;
+	background: white;
+	text-align: left;
+	overflow: hidden;
+	margin: auto;
+	left: 50%;
+	top: 50%;
+	behavior: url("PIE.htc");
+	*behavior: none;
+}
+.dialog .title {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00aaee,endColorstr=#0066cc);
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00aaee), to(#0066cc));
+	background: -webkit-linear-gradient(top, #00aaee, #0066cc);
+	background:    -moz-linear-gradient(top, #00aaee, #0066cc);
+	background:     -ms-linear-gradient(top, #00aaee, #0066cc);
+	background:      -o-linear-gradient(top, #00aaee, #0066cc);
+	background:         linear-gradient(top, #00aaee, #0066cc);
+	text-shadow: 0 0 1px black;
+	font-weight: bold;
+	line-height: 28px;
+	overflow: hidden;
+	cursor: move;
+	color: white;
+	*width: expression(this.parentNode.clientWidth);
+}
+.dialog .title div {
+	padding: 0 8px;
+}
+.dialog .text,
+.dialog .content {
+    margin: 20px;
+}
+.dialog .text{
+	text-align: center;
+}
+.dialog .content {
+	word-break: keep-all;
+	white-space: nowrap;
+}
+.dialog input,
+.dialog .content {
+	min-width: 200px;
+	_width: 200px;
+}
+.dialog input {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	display: block;
+	width: 100%;
+	*width: auto;
+}
+.dialog .btns {
+	text-align: center;
+	margin: 10px 5px;
+}
+.dialog .btns * {
+	border: 1px solid #CCC;
+	text-decoration: none;
+	background: none;
+	padding: 5px 20px;
+	margin: 0 5px;
+	color: #000;
+}
+#dialogbg, .dialog,.dialog .winbtns .size,.dialog input  {
+    /*display: none ;*/
+}
+#dialogbg, .dialog {
+	display: block;
+}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+	<select class="select">
+		<option>看看有没有遮住对话框</option>
+		<option>看看有没有遮住对话框</option>
+		<option>看看有没有遮住对话框</option>
+	</select>
+	<br>
+	请点击下面的链接弹出对框框
+	<br>
+	<a href="javascript:msgbox('你好，欢迎使用 Windows 8 旗舰版')">alert</a>
+	<br>
+	<a href="javascript:msgbox('您确定要关闭计算机吗?',function(t){alert(t)})">confirm</a>
+	<br>
+	<a href="javascript:msgbox('请输入您的姓名',function(t){alert(t)},'匿名')">prompt</a>
+</div>
+<script>
+function msgbox(msg, fun, text){
+	var dialogbg = document.querySelector("#dialogbg");
+	if(!dialogbg){
+		dialogbg = document.createElement("div");
+		dialogbg.id = "dialogbg";
+		document.body.appendChild(dialogbg);
+	}
+	dialogbg.innerHTML = '<div class="bgcolor"></div><div class="dialog"><div class="title" unselectable="on"><div>消息</div></div><div class="content"></div><div class="text"><input type="text"></div><div class="btns"><button class="ok">确定</button><button class="cancel">取消</button></div></div>';
+	
+	dialogbg.querySelector(".content").innerHTML = msg || "&nbsp;";
+	function hide( sel ){
+		dialogbg.querySelector(sel).style.display = "none";
+	}
+	var btnOk = dialogbg.querySelector(".ok"),
+		btnCancel = dialogbg.querySelector(".cancel");
+	if(fun){
+		if(text == undefined){
+			hide(".text");
+			btnOk.onclick = function(){
+				fun(true);
+			}
+			btnCancel.onclick = function(){
+				fun(false);
+			}
+		}else{
+			var textbox = dialogbg.querySelector("input");
+			textbox.value = text;
+			btnOk.onclick = function(){
+				fun.call(textbox, textbox.value);
+			}
+		}
+	}else{
+		hide(".cancel");
+		hide(".text");
+	}
+
+	function btnClose(){
+		dialogbg.style.display = "none";
+	}
+
+	btnOk.addEventListener("click", btnClose, true);
+	btnCancel.addEventListener("click", btnClose, true);
+
+	dialogbg.style.display = "block";
+
+	var dialog = dialogbg.querySelector(".dialog");
+	dialog.style.left = (dialogbg.offsetWidth - dialog.offsetWidth) / 2 + "px";
+	dialog.style.top = (dialogbg.offsetHeight - dialog.offsetHeight) / 2 + "px";
+	drag(dialog, dialog.querySelector(".title"));
+}
+function drag(dialog, titleBar){
+	var onDrag,
+		pos = {},
+		dialogbg = document.querySelector("html");
+
+	titleBar.addEventListener("mousedown", function(e){
+		pos.left = dialog.offsetLeft;
+		pos.top = dialog.offsetTop;
+		pos.x = e.pageX;
+		pos.y = e.pageY;
+		onDrag = true;
+	}, false);
+
+	dialogbg.addEventListener("mousemove", function(e){
+		if(onDrag){
+			dialog.style.left = (pos.left + e.pageX - pos.x) + "px";
+			dialog.style.top = (pos.top + e.pageY - pos.y) + "px";
+		}
+	}, false);
+
+	titleBar.onselectstart = function(){
+		return false;
+	}
+
+	dialogbg.onmouseup = function(){
+		onDrag = false;
+	}
+}
+</script>
+</body>
+</html>

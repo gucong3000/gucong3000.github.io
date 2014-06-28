@@ -1,0 +1,119 @@
+<PUBLIC:COMPONENT lightWeight="true">
+<PUBLIC:ATTACH EVENT="ondocumentready" FOR="element" ONEVENT="select()" />
+<script type="text/javascript">
+function select(){
+	var exp, elm = element,
+		doc = elm.document,
+		wrap = doc.createElement("label"),
+		text = doc.createElement("tt"),
+		arrow = doc.createElement("tt"),
+		prop = ["Width", "Color"],
+		pos = ["Bottom", "Right", "Left", "Top"];
+		multiple = element.multiple || element.size > 1;
+	if( !/^select$/i.test(elm.tagName ) || doc.documentMode > 7 ){
+		return;
+	}
+
+	elm.parentNode.insertBefore(wrap, elm);
+	if(!multiple){
+		with(arrow.runtimeStyle){
+			setExpression("marginTop", "this.parentNode.lastChild.offsetHeight /  2 - 2");
+			setExpression("marginLeft", "this.parentNode.lastChild.offsetWidth - 15");
+			setExpression("borderLeft", exp = "'4px solid ' + this.parentNode.currentStyle.backgroundColor");
+			setExpression("borderRight", exp);
+			borderTop = "4px solid #000";
+			verticalAlign = "top";
+			position = "absolute";
+			overflow = "hidden";
+			height = width = 0;
+		}
+		with(text.style){
+			//setExpression("marginTop", "'-' + this.nextSibling.currentStyle.paddingTop");
+			//setExpression("textIndent", "this.nextSibling.currentStyle.paddingLeft");
+			setExpression("fontFamily", "this.nextSibling.currentStyle.fontFamily");
+			setExpression("fontSize", "this.nextSibling.currentStyle.fontSize");
+			setExpression("color", "this.nextSibling.currentStyle.color");
+			setExpression("width", "this.nextSibling.offsetWidth");
+			setExpression("lineHeight", "this.nextSibling.offsetHeight + 'px'");
+			position = "absolute";
+			marginTop = -2;
+			textIndent = 3;
+		}
+		wrap.appendChild(arrow);
+		wrap.appendChild(text);
+	}
+	wrap.appendChild(elm);
+
+	with(wrap.runtimeStyle){
+		setExpression("background", "this.lastChild.currentStyle.backgroundColor");
+		verticalAlign = "middle";
+		overflow = "hidden";
+		zoom = 1;
+	}
+
+	for(var i in pos){
+		var padding = "padding" + pos[i];
+		wrap.runtimeStyle.setExpression(padding, "this.lastChild.currentStyle." + padding);
+	}
+
+	with(elm.runtimeStyle){
+		verticalAlign = "top";
+	}
+
+	if("XMLHttpRequest" in window){
+		with(elm.runtimeStyle){
+			setExpression("marginBottom", exp = "0 - this.parentNode.clientTop");
+			setExpression("marginTop", exp);
+			setExpression("marginRight", exp = "0 - this.parentNode.clientLeft");
+			setExpression("marginLeft", exp);
+			position = "relative";
+			if(!multiple){
+				filter = "alpha(opacity=0)";
+			}
+			zIndex = 1;
+		}
+		wrap.runtimeStyle.borderStyle = "solid";
+	}else{
+		prop.push("Style");
+		elm.runtimeStyle.margin = -2;
+
+		if(!multiple){
+			function visible(val){
+				elm.runtimeStyle.visibility = val;
+			}
+		
+			function show(){
+				visible("visible");
+			}
+		
+			function hide(){
+				visible("hidden");
+			}
+		
+			wrap.onmouseenter = show;
+			wrap.onmouseleave = hide;
+			wrap.onfocusin = hide;
+	
+			hide();
+		}
+	}
+
+	for(var i in pos){
+		for(var j in prop){
+			var css = "border" + pos[i] + prop[j];
+			wrap.runtimeStyle.setExpression(css, "this.lastChild.currentStyle." + css);
+		}
+	}
+
+	if(multiple){
+		elm.runtimeStyle.margin = -3;
+	} else {
+		function change(){
+			text.innerHTML = elm.options[elm.selectedIndex].innerHTML;
+		}
+		change();
+		elm.attachEvent("onpropertychange", change);
+	}
+}
+</script>
+</PUBLIC:COMPONENT>
